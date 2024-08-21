@@ -46,7 +46,7 @@ export default function Admin(){
           {data?.map((udata, i) => (
             <tr className="dataRow">
               <td className="td">{i + 1}</td>
-              <td className="td">324234324</td>
+              <td className="td">{udata.refId}</td>
               <td className="td">{udata.data.id}</td>
               <td className="td">{udata.data.name}</td>
               <td className="td">{udata.data.dpt}</td>
