@@ -1,0 +1,227 @@
+.container {
+    width: 100%;
+    max-height: max-content;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    flex-direction: column;
+    background-color: whitesmoke;
+    background:
+        linear-gradient(135deg, #0000 18.75%, #ffffff 0 31.25%, #0000 0),
+        repeating-linear-gradient(45deg, #ffffff -6.25% 6.25%, #fdfdfd 0 18.75%);
+    background-size: 64px 64px;
+}
+
+.container .wrapper {
+    width: 40%;
+    min-height: max-content;
+    max-height: max-content;
+    padding: 20px;
+    padding-top: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid #e9e9e9;
+}
+
+.container .wrapper .section {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.btn.pos{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    border: 2px solid black;
+    background-color: rgb(19, 19, 19);
+}
+
+/* title component */
+.wrap {
+    height: max-content;
+    font-family: "Public Sans";
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 40%;
+}
+
+.wrap .title {
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.wrap .sub {
+    font-size: 15px;
+    color: #333333;
+}
+
+
+/* input component */
+
+.wrap.inp-wrap {
+    width: 100%;
+}
+
+.lab {
+    font-family: "Public Sans";
+    font-size: 12px;
+    margin-bottom: 10px;
+    width: 90%;
+    line-height: calc(100% + 5px);
+    font-weight: 600;
+}
+
+.wrap .inp {
+    width: 100%;
+    height: 40px;
+    border: 2px solid #e9e9e9;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-family: "Public Sans";
+}
+
+
+/* radio component */
+.wrap.rd {
+    width: max-content;
+    flex-direction: row;
+    gap: 0;
+    margin-top: 10px;
+}
+
+.wrap.rd .lab {
+    user-select: none;
+    color: rgb(44, 44, 44);
+    margin-right: 5px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.container .wrapper .section.rd {
+    display: flex;
+    gap: 20px;
+}
+
+
+
+/* button component */
+
+.wrap.bt {
+    width: max-content;
+}
+
+.btn {
+    width: max-content;
+    height: 35px;
+    padding: 0 50px;
+    border: none;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    font-family: "Public Sans";
+    cursor: pointer;
+}
+
+.btn .loading {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 4px solid white;
+    border-right-color: black;
+    position: relative;
+    animation: 1s ease infinite load;
+}
+
+@keyframes load {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* select component */
+
+.wrap.sel {
+    width: 100%;
+}
+
+.wrap.sel .row {
+    display: flex;
+    gap: 10px;
+}
+
+.wrap.sel .row .selt {
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    font-family: "Public Sans";
+    background: #fdfdfd;
+    border: 2px solid #e9e9e9;
+    border-radius: 5px;
+}
+
+.wrap.sel .row .selt .option {
+    font-family: "Public Sans";
+}
+
+/* dates component */
+.wrap.inp-wrap .row {
+    gap: 10px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr max-content 1fr;
+}
+
+
+/* textarea component */
+
+.container .wrapper .section.rd.opt {
+    flex-direction: column;
+    margin-bottom: 5px;
+    gap: 0;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.container .wrapper .section.rd.opt .radioWrap {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    gap: 30px;
+}
+
+.wrap.ta {
+    width: 100%;
+}
+
+.inp.tarea {
+    height: 80px;
+    padding: 10px;
+    resize: none;
+    font-size: 14px;
+}
+
+.inp.tarea.disabled {
+    background: #f8f8f8;
+}
+
+.section.rd .lab.rdhead {
+    width: max-content;
+    height: max-content;
+    word-wrap: break-word;
+}
+
+.section.rd.opt .wrap {
+    margin-top: 0;
+}
