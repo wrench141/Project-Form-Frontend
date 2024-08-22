@@ -10,7 +10,7 @@ export default function Radio({label, value, callback, category, setState, state
         <label htmlFor={label + category} className="lab">
           {label}
         </label>
-        <input type="radio" checked={value == state} name={category} id={label + category} value={value} onChange={e => callback(e, setState)}/>
+        <input type="radio" checked={value == state} name={category} id={label + category} value={value} onChange={e => setState(e.target.value)}/>
       </div>
     );
 }

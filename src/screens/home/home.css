@@ -225,3 +225,24 @@
 .section.rd.opt .wrap {
     margin-top: 0;
 }
+
+@media only screen and (max-width: 750px) {
+    .container .wrapper, .wrap {
+        width: 90%;
+    }
+    .container .wrapper .section, .wrap.inp-wrap .row{
+        grid-template-columns: 1fr;
+    }
+    .wrap.sel .row .selt{
+        width: 100%;
+    }
+    .container .wrapper .section.rd{
+        flex-wrap: wrap;
+    }
+    .container .wrapper .section.rd.opt .radioWrap{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .container .wrapper .section.rd.opt{
+        padding-left: 0;
+    }
+}

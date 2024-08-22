@@ -33,7 +33,7 @@ export default function Home() {
     to: "",
   });
 
-  const [reason, setReason] = useState();
+  const [reason, setReason] = useState("");
   const [reasonOption, setReasonOption] = useState("Resignation");
 
   const [acceptance, setAcceptance] = useState("");
@@ -156,7 +156,7 @@ export default function Home() {
     setState(e.target.value);
   };
   
-  const {formId} = useParams()
+  const {formId} = useParams();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -247,14 +247,16 @@ export default function Home() {
       <Title title="VIIT Exit Form" />
       <div className="wrapper">
         <div className="section">
-          <Input
+          <Input 
+            disabled={false}
             label={"Employee ID"}
             value={id}
             setValue={setId}
             placeholder={"Enter Employee ID"}
             show={true}
           />
-          <Input
+          <Input 
+            disabled={false}
             label={"Employee's Name"}
             value={name}
             setValue={setName}
@@ -313,7 +315,8 @@ export default function Home() {
               state={reasonOption}
               setState={setReasonOption}
             />
-            <Input
+            <Input 
+              disabled={reasonOption == "Other" ? false : true}
               label={""}
               value={reason}
               setValue={setReason}
@@ -341,7 +344,8 @@ export default function Home() {
               state={acceptanceOption}
               setState={setAcceptanceOption}
             />
-            <Input
+            <Input 
+              disabled={acceptanceOption == "Yes" ? false: true}
               label={""}
               value={acceptance}
               setValue={setAcceptance}
@@ -351,14 +355,16 @@ export default function Home() {
         </div>
 
         <div className="section">
-          <Input
+          <Input 
+            disabled={false}
             label={"Present Title"}
             value={presentTitle}
             setValue={setPresentTitle}
             placeholder={"Enter Present Title"}
             show={true}
           />
-          <Input
+          <Input 
+            disabled={false}
             label={"New Title"}
             value={newTitle}
             setValue={setNewTitle}
@@ -368,14 +374,16 @@ export default function Home() {
         </div>
 
         <div className="section">
-          <Input
+          <Input 
+            disabled={false}
             label={"Present Salary"}
             value={salary}
             setValue={setSalary}
             placeholder={"$25000"}
             show={true}
           />
-          <Input
+          <Input 
+            disabled={false}
             label={"New Salary"}
             value={newSalary}
             setValue={setNewSalary}
@@ -394,7 +402,8 @@ export default function Home() {
         </div>
 
         <div className="section rd">
-          <Input
+          <Input 
+            disabled={false}
             label={
               "1. How long ago did you begin searching for another position?"
             }
@@ -491,7 +500,8 @@ export default function Home() {
               state={q6Option}
               setState={setQ6Option}
             />
-            <Input
+            <Input 
+              disabled={q6Option == "No" ? false : true}
               label={""}
               value={question6}
               setValue={setQuestion6}
@@ -576,7 +586,7 @@ export default function Home() {
         <div className="radioWrap">
           <p className="lab">14. How would you rate the following:</p>
           <div className="section rd opt">
-            <p className="lab rdhead">Job responsibilities: </p>
+            <p className="lab rdhead">A. Job responsibilities: </p>
             <div className="radioWrap">
               <Radio
                 label={"Outstanding"}
@@ -622,7 +632,7 @@ export default function Home() {
           </div>
 
           <div className="section rd opt">
-            <p className="lab rdhead">Opportunity for achieving goals: </p>
+            <p className="lab rdhead">B. Opportunity for achieving goals: </p>
             <div className="radioWrap">
               <Radio
                 label={"Outstanding"}
@@ -668,7 +678,7 @@ export default function Home() {
           </div>
 
           <div className="section rd opt">
-            <p className="lab rdhead">Work environment: </p>
+            <p className="lab rdhead">C. Work environment: </p>
             <div className="radioWrap">
               <Radio
                 label={"Outstanding"}
@@ -714,7 +724,7 @@ export default function Home() {
           </div>
 
           <div className="section rd opt">
-            <p className="lab rdhead">Supervisor: </p>
+            <p className="lab rdhead">D. Supervisor: </p>
             <div className="radioWrap">
               <Radio
                 label={"Outstanding"}
@@ -760,7 +770,7 @@ export default function Home() {
           </div>
 
           <div className="section rd opt">
-            <p className="lab rdhead">Pay: </p>
+            <p className="lab rdhead">E. Pay: </p>
             <div className="radioWrap">
               <Radio
                 label={"Outstanding"}
@@ -806,7 +816,7 @@ export default function Home() {
           </div>
 
           <div className="section rd opt">
-            <p className="lab rdhead">Benefits: </p>
+            <p className="lab rdhead">F. Benefits: </p>
             <div className="radioWrap">
               <Radio
                 label={"Outstanding"}
@@ -885,7 +895,8 @@ export default function Home() {
               state={q16Option}
               setState={setQ16Option}
             />
-            <Input
+            <Input 
+              disabled={q16Option == "Yes" ? false: true}
               label={""}
               value={question16}
               setValue={setQuestion16}
@@ -946,7 +957,7 @@ export default function Home() {
         </div>
 
         {
-          formId == "" ? (
+          formId == undefined ? (
             <div className="section">
               <Button label={"Submit"} callback={submitHandler} />
             </div>
