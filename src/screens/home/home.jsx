@@ -141,7 +141,7 @@ export default function Home() {
     axios.post(url, {
       data: data
     }).then(response => {
-      console.log(response.data)
+      window.location.href = "/submitted";
     })
 
     return new Promise((resolve) => {
