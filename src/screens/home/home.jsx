@@ -169,7 +169,7 @@ export default function Home() {
         const data = response.data.data;
         console.log(data.data.date.from)
 
-        setId(data._id || "");
+        setId(data.data.id || "");
         setName(data.data.name || "");
         setDpt(data.data.dpt || departments[0]);
         setDate({
